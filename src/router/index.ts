@@ -45,6 +45,13 @@ export const constantRoutes: RouteRecordRaw[] = [
     }
   },
   {
+    path: "/",
+    redirect: "/pages/dashboard",
+    meta: {
+      hidden: true
+    }
+  },
+  {
     path: "/pages",
     component: Layouts,
     redirect: "/pages/dashbord",
@@ -65,22 +72,16 @@ export const constantRoutes: RouteRecordRaw[] = [
         }
       },
       {
-        path: "/unocss",
-        redirect: "/unocss/index",
-        children: [
-          {
-            path: "index",
-            component: () => import("@/views/pages/unocss/index.vue"),
-            name: "UnoCSS",
-            meta: {
-              title: "UnoCSS",
-              svgIcon: "unocss"
-            }
-          }
-        ]
+        path: "unocss",
+        component: () => import("@/views/pages/unocss/index.vue"),
+        name: "UnoCSS",
+        meta: {
+          title: "UnoCSS",
+          svgIcon: "unocss"
+        }
       },
       {
-        path: "/link",
+        path: "link",
         meta: {
           title: "外链",
           svgIcon: "link"
@@ -105,7 +106,7 @@ export const constantRoutes: RouteRecordRaw[] = [
         ]
       },
       {
-        path: "/table",
+        path: "table",
         redirect: "/table/element-plus",
         name: "Table",
         meta: {
@@ -134,7 +135,7 @@ export const constantRoutes: RouteRecordRaw[] = [
         ]
       },
       {
-        path: "/hook-demo",
+        path: "hook-demo",
         redirect: "/hook-demo/use-fetch-select",
         name: "HookDemo",
         meta: {
@@ -170,7 +171,7 @@ export const constantRoutes: RouteRecordRaw[] = [
         ]
       },
       {
-        path: "/menu",
+        path: "menu",
         redirect: "/menu/menu1",
         name: "Menu",
         meta: {
@@ -246,6 +247,22 @@ export const constantRoutes: RouteRecordRaw[] = [
             }
           }
         ]
+      },
+    ]
+  },
+  {
+    path: "/table",
+    component: Layouts,
+    redirect: "/table/index",
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/table/index.vue"),
+        name: 'table',
+        meta: {
+          title: "表格",
+          elIcon: "Grid"
+        },
       },
     ]
   },
