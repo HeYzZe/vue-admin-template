@@ -48,32 +48,24 @@ export const constantRoutes: RouteRecordRaw[] = [
     path: "/pages",
     component: Layouts,
     redirect: "/pages/dashbord",
-    name: "Menu",
+    name: "Pages",
     meta: {
       title: "demo页面",
       svgIcon: "menu"
     },
     children: [
       {
-        path: "/",
-        component: Layouts,
-        redirect: "/dashboard",
-        children: [
-          {
-            path: "dashboard",
-            component: () => import("@/views/pages/dashboard/index.vue"),
-            name: "Dashboard",
-            meta: {
-              title: "首页",
-              svgIcon: "dashboard",
-              affix: true
-            }
-          }
-        ]
+        path: "dashboard",
+        component: () => import("@/views/pages/dashboard/index.vue"),
+        name: "Dashboard",
+        meta: {
+          title: "首页",
+          svgIcon: "dashboard",
+          affix: true
+        }
       },
       {
         path: "/unocss",
-        component: Layouts,
         redirect: "/unocss/index",
         children: [
           {
@@ -114,7 +106,6 @@ export const constantRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/table",
-        component: Layouts,
         redirect: "/table/element-plus",
         name: "Table",
         meta: {
@@ -144,7 +135,6 @@ export const constantRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/hook-demo",
-        component: Layouts,
         redirect: "/hook-demo/use-fetch-select",
         name: "HookDemo",
         meta: {
@@ -181,7 +171,6 @@ export const constantRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/menu",
-        component: Layouts,
         redirect: "/menu/menu1",
         name: "Menu",
         meta: {
